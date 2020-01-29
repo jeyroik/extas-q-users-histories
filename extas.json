@@ -1,0 +1,19 @@
+{
+  "name": "extas/quality-users-histories",
+  "package_classes": [
+    {
+      "interface": "extas\\interfaces\\quality\\users\\IUserHistoryRepository",
+      "class": "extas\\components\\quality\\users\\UserHistoryRepository"
+    }
+  ],
+  "plugins": [
+    {
+      "class": "extas\\components\\plugins\\PluginInstallQualityUsersHistories",
+      "stage": "extas.install"
+    },
+    {
+      "class": "extas\\components\\plugins\\quality\\PluginUserDataAppliedHistory",
+      "stage": "quality.user.data.applied"
+    }
+  ]
+}
