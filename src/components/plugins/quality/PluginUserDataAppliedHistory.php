@@ -33,7 +33,7 @@ class PluginUserDataAppliedHistory extends Plugin
         if (!$exists) {
             $repo->create($history);
             $output->writeln([
-                '<success>History for user "' . $user->getName() . '" saved</success>'
+                '<info>History for user "' . $user->getName() . '" saved</info>'
             ]);
         }
     }
