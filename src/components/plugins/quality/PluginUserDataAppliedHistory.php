@@ -29,7 +29,10 @@ class PluginUserDataAppliedHistory extends Plugin
 
         $history = new UserHistory($user->__toArray());
         $history->setMonth(date('Ym'))->setTimestamp(time());
-        $exists = $repo->one($history->__toArray());
+        $exists = $repo->one([
+            UserHistory::FIELD__NAME => $history->getName(),
+            UserHistory::FIELD__MONTH => $history->getMonth()
+        ]);
         if (!$exists) {
             $repo->create($history);
             $output->writeln([
