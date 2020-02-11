@@ -28,7 +28,7 @@ class PluginUserDataAppliedHistory extends Plugin
         $repo = SystemContainer::getItem(IUserHistoryRepository::class);
 
         $history = new UserHistory($user->__toArray());
-        $history->setMonth(date('Ym'))->setTimestamp(time());
+        $history->setMonth((int) date('Ym'))->setTimestamp(time());
         $exists = $repo->one([
             UserHistory::FIELD__NAME => $history->getName(),
             UserHistory::FIELD__MONTH => $history->getMonth()
