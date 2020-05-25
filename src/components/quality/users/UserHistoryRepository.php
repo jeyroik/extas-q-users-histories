@@ -12,9 +12,8 @@ use extas\interfaces\quality\users\IUserHistoryRepository;
  */
 class UserHistoryRepository extends Repository implements IUserHistoryRepository
 {
-    protected $idAs = UserHistory::FIELD__ID;
-    protected $scope = 'extas';
-    protected $pk = UserHistory::FIELD__ID;
-    protected $name = 'quality_users_histories';
-    protected $itemClass = UserHistory::class;
+    protected string $scope = 'extas';
+    protected string $pk = UserHistory::FIELD__ID;
+    protected string $name = 'quality_users_histories';
+    protected string $itemClass = UserHistory::class;
 }

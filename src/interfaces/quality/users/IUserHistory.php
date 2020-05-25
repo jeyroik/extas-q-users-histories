@@ -11,8 +11,8 @@ use extas\interfaces\IHasId;
  */
 interface IUserHistory extends IUser, IHasId
 {
-    const FIELD__MONTH = 'month';
-    const FIELD__TIMESTAMP = 'timestamp';
+    public const FIELD__MONTH = 'month';
+    public const FIELD__TIMESTAMP = 'timestamp';
 
     /**
      * @return int

@@ -12,9 +12,9 @@ use extas\interfaces\quality\users\IUserHistoryRepository;
  */
 class PluginInstallQualityUsersHistories extends PluginInstallDefault
 {
-    protected $selfItemClass = UserHistory::class;
-    protected $selfName = 'quality user history';
-    protected $selfSection = 'quality_users_histories';
-    protected $selfRepositoryClass = IUserHistoryRepository::class;
-    protected $selfUID = UserHistory::FIELD__ID;
+    protected string $selfItemClass = UserHistory::class;
+    protected string $selfName = 'quality user history';
+    protected string $selfSection = 'quality_users_histories';
+    protected string $selfRepositoryClass = IUserHistoryRepository::class;
+    protected string $selfUID = UserHistory::FIELD__ID;
 }
