@@ -2,7 +2,7 @@
   "name": "extas/quality-users-histories",
   "package_classes": [
     {
-      "interface": "extas\\interfaces\\quality\\users\\IUserHistoryRepository",
+      "interface": "userHistoryRepository",
       "class": "extas\\components\\quality\\users\\UserHistoryRepository"
     }
   ],
@@ -14,6 +14,16 @@
     {
       "class": "extas\\components\\plugins\\quality\\PluginUserDataAppliedHistory",
       "stage": "quality.user.data.applied"
+    }
+  ],
+  "extensions": [
+    {
+      "class": "extas\\components\\extensions\\ExtensionRepositoryGet",
+      "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryGet",
+      "subject": "*",
+      "methods": [
+        "userHistoryRepository"
+      ]
     }
   ]
 }

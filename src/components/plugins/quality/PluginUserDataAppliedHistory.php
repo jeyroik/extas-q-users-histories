@@ -3,13 +3,14 @@ namespace extas\components\plugins\quality;
 
 use extas\components\plugins\Plugin;
 use extas\components\quality\users\UserHistory;
-use extas\components\SystemContainer;
 use extas\interfaces\quality\users\IUser;
 use extas\interfaces\quality\users\IUserHistoryRepository;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Class PluginUserDataAppliedHistory
+ *
+ * @method userHistoryRepository()
  *
  * @package extas\components\plugins\quality
  * @author jeyroik@gmail.com
@@ -25,7 +26,7 @@ class PluginUserDataAppliedHistory extends Plugin
         /**
          * @var $repo IUserHistoryRepository
          */
-        $repo = SystemContainer::getItem(IUserHistoryRepository::class);
+        $repo = $this->userHistoryRepository();
 
         $history = new UserHistory($user->__toArray());
         $history->setMonth((int) date('Ym'))->setTimestamp(time());
