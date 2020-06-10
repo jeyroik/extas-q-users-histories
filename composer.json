@@ -2,8 +2,7 @@
   "name": "jeyroik/extas-q-users-histories",
   "description": "Quality user history package",
   "require": {
-    "jeyroik/extas-base": "2.*",
-    "jeyroik/extas-installer": "2.*",
+    "jeyroik/extas-foundation": "5.*",
     "symfony/console": "5.*"
   },
   "autoload": {
