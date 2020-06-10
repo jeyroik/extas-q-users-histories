@@ -2,14 +2,18 @@
   "name": "extas/quality-users-histories",
   "package_classes": [
     {
-      "interface": "userHistoryRepository",
+      "interface": "qualityUserHistoryRepository",
       "class": "extas\\components\\quality\\users\\UserHistoryRepository"
     }
   ],
   "plugins": [
     {
-      "class": "extas\\components\\plugins\\PluginInstallQualityUsersHistories",
-      "stage": "extas.install"
+      "class": "extas\\components\\plugins\\install\\InstallQualityUsersHistories",
+      "stage": "extas.install.section.quality_users_histories"
+    },
+    {
+      "class": "extas\\components\\plugins\\uninstall\\UninstallQualityUsersHistories",
+      "stage": "extas.uninstall.section.quality_users_histories"
     },
     {
       "class": "extas\\components\\plugins\\quality\\PluginUserDataAppliedHistory",
@@ -22,7 +26,7 @@
       "interface": "extas\\interfaces\\extensions\\IExtensionRepositoryGet",
       "subject": "*",
       "methods": [
-        "userHistoryRepository"
+        "qualityUserHistoryRepository"
       ]
     }
   ]
